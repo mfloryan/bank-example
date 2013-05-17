@@ -26,7 +26,7 @@ namespace CTM.Bank.Domain
             
         }
 
-        public void Create(object additionalOptions)
+        public void CreateAccount(object additionalOptions)
         {
             
         }
