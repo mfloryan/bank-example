@@ -1,75 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
+using CTM.Bank.Domain;
 using CommandLine;
-using CommandLine.Text;
 
 namespace CTM.Bank.Console
 {
     class Program
     {
-        private static bool shouldQuit;
         static void Main()
         {
             var options = new CommandLineOptions();
             var commandLine = Parser.Default;
+
+            var bank = new BankingApplication();
+
+            System.Console.WriteLine("Welcome to the CTM.Bank, please use the following commands:");
+            System.Console.Out.WriteLine(options.GetUsage());
             do
             {
                 System.Console.Write(" > ");
                 var input = System.Console.ReadLine() ?? string.Empty;
-                var parsingSuccessful = commandLine.ParseArguments(input.Split(' '), options, InterpretCommand);
+                var parsingSuccessful = commandLine.ParseArguments(input.Split(' '), options, (verb, additionalOptions) => BankingVerb.From(verb).Execute(bank, additionalOptions));
                 if (!parsingSuccessful)
                 {
                     System.Console.Out.WriteLine(options.GetUsage());
                 }
                 
-            } while(!shouldQuit);
+            } while(bank.IsOpen);
 
             System.Console.Out.WriteLine("kthxbye!");
             System.Console.ReadLine();
-        }
-
-        private static void InterpretCommand(string verb, object suboptions)
-        {
-            if (verb.Equals("quit"))
-            {
-                shouldQuit = true;
-            }
-        }
-    }
-
-    public class CommandLineOptions
-    {
-        private readonly HelpText usage;
-
-        public CommandLineOptions()
-        {
-            usage = new HelpText
-            {
-                Heading = new HeadingInfo("CTM.Bank", Assembly.GetExecutingAssembly().GetName().Version.ToString()),
-                Copyright = new CopyrightInfo("comparethemarket.com", 2013),
-                AdditionalNewLineAfterOption = false,
-                AddDashesToOption = true
-            };
-            usage.AddPreOptionsLine("Usage: ");
-            
-            usage.AddOptions(this);
-        }
-
-        [VerbOption("quit", HelpText = "Quit the application")]
-        public ApplicationCommand Quit { get; set; }
-        
-        [VerbOption("deposit", HelpText = "Deposit money into the account")]
-        public TransactionOptions DepositAmount { get; set; }
-        
-        [VerbOption("withdraw", HelpText = "Withdraw money from the account")]
-        public TransactionOptions WithdrawAmount { get; set; }
-
-        [HelpOption]
-        public string GetUsage()
-        {
-            usage.RenderParsingErrorsText(this, 2);
-            return usage;
         }
     }
 

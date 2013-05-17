@@ -1,0 +1,3 @@
+@echo off
+@echo Opening the bank...
+src\CTM.Bank.Console\bin\Debug\CTM.Bank.Console.exe
