@@ -1,0 +1,35 @@
+_ReSharper*/
+reports/*.xml
+db/build/
+*ReSharper.user
+src/**/obj/
+src/**/bin/
+logs/
+reports/
+*resharper.user
+# Visual Studio
+*DotSettings.user
+src/**/[Dd]ebug/
+src/**/[Rr]elease/
+/src/CTM.Home.Web/Scripts/.idea/*
+/src/**/TestResults/
+/src/TestResults/
+*.webtestresult
+*.sln.cache
+*.suo
+*.csproj.user
+# Resharper
+*[Rr]e[Ss]harper.user
+_ReSharper.*/
+build/*
+src/**/build/
+src/**/bin/
+**/bin/*
+buildOutput
+src/CTM.Home.Version/ApplicationVersionInfo.cs
+src/**/*.orig
+.sass-cache/
+tools/NUnit/TestResult.xml
+docs/~*
+src/UpgradeLog.*
+src/_UpgradeReport_Files/

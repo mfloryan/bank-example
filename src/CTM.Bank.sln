@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTM.Bank.Console", "CTM.Bank.Console\CTM.Bank.Console.csproj", "{7FE9C46E-688F-4BED-B1C2-16881BFF54C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTM.Bank.Domain", "CTM.Bank.Domain\CTM.Bank.Domain.csproj", "{DF02A044-D112-4F1F-9EC9-F2B830349843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTM.Bank.Tests", "CTM.Bank.Tests\CTM.Bank.Tests.csproj", "{F2AF4D41-71FB-4286-B32B-EF2F5369D8EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FE9C46E-688F-4BED-B1C2-16881BFF54C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE9C46E-688F-4BED-B1C2-16881BFF54C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE9C46E-688F-4BED-B1C2-16881BFF54C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE9C46E-688F-4BED-B1C2-16881BFF54C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF02A044-D112-4F1F-9EC9-F2B830349843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF02A044-D112-4F1F-9EC9-F2B830349843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF02A044-D112-4F1F-9EC9-F2B830349843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF02A044-D112-4F1F-9EC9-F2B830349843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2AF4D41-71FB-4286-B32B-EF2F5369D8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2AF4D41-71FB-4286-B32B-EF2F5369D8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2AF4D41-71FB-4286-B32B-EF2F5369D8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2AF4D41-71FB-4286-B32B-EF2F5369D8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
