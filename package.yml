@@ -1,0 +1,9 @@
+component: CTM.Bank
+summary: A project for learning the ins and outs of event-infrastructure.
+
+copyright: Copyright (c) 2013 ComparetheMarket
+licenseUrl: http://www.comparethemarket.com
+projectUrl: http://pbo-ctmgit01/summary/Development/CTM.Bank.git
+iconUrl: http://www.comparethemarket.com/favicon.ico
+tags:
+ - domain driven design
