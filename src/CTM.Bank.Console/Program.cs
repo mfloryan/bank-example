@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CTM.Bank.Domain;
+﻿using CTM.Bank.Domain;
 using CTM.Bank.Domain.Control;
 
 namespace CTM.Bank.Console
@@ -15,7 +14,7 @@ namespace CTM.Bank.Console
             {
                 System.Console.Write(" > ");
                 var input = System.Console.ReadLine() ?? string.Empty;
-                BankingVerb.From(input).Execute(bank);
+                System.Console.Out.WriteLine("  " + BankingVerb.From(input).Execute(bank));
 
             } while(bank.IsOpen);
 

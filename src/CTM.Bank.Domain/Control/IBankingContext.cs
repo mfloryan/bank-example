@@ -2,6 +2,6 @@
 {
     public interface IBankingContext
     {
-        void Execute(BankingApplication bank);
+        string Execute(BankingApplication bank);
     }
 }

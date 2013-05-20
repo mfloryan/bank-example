@@ -2,9 +2,21 @@
 {
     public class Money
     {
+        private readonly decimal amount;
+
+        public Money(decimal amount)
+        {
+            this.amount = amount;
+        }
+
         public static Money From(object obj)
         {
-            return new Money();
+            return new Money(0m);
+        }
+
+        public override string ToString()
+        {
+            return amount.ToString("C");
         }
     }
 }

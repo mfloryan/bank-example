@@ -4,32 +4,45 @@ using CTM.Bank.Domain.ValueTypes;
 
 namespace CTM.Bank.Domain.Control
 {
-    public class HelpContext : IBankingContext
-    {
-        public void Execute(BankingApplication bank)
-        {
-            Console.Out.WriteLine("The valid commands are: help, create, open, deposit, withdraw, quit");
-        }
-    }
-
     public class BankingContext : IBankingContext
     {
-        private readonly Action<BankingApplication> action;
-        public static readonly BankingContext Quit = new BankingContext(bank => bank.Close());
-        public static readonly BankingContext DoNothing = new BankingContext(bank => { });
+        public static readonly BankingContext Quit = new BankingContext(bank => bank.Close(), "Quitting");
+        public static readonly BankingContext DoNothing = new BankingContext(bank => { }, "Unknown Command");
+        private readonly Action<BankingApplication> action = bank => { };
+        private readonly string message;
 
-        private BankingContext(Action<BankingApplication> action)
+        protected BankingContext()
         {
-            this.action = action;
+            message = "Unknown Command";
         }
 
-        public void Execute(BankingApplication bank)
+        private BankingContext(Action<BankingApplication> action, string message)
+        {
+            this.action = action;
+            this.message = message;
+        }
+
+        public string Execute(BankingApplication bank)
+        {
+            return DoExecute(bank);
+        }
+
+        protected virtual string DoExecute(BankingApplication bank)
         {
             action(bank);
+            return message;
         }
     }
 
-    public class DepositContext : IBankingContext
+    public class HelpContext : BankingContext
+    {
+        protected override string DoExecute(BankingApplication bank)
+        {
+            return "The valid commands are: help, create, open, deposit, withdraw, quit";
+        }
+    }
+
+    public class DepositContext : BankingContext
     {
         private readonly IEnumerable<string> arguments;
 
@@ -38,13 +51,15 @@ namespace CTM.Bank.Domain.Control
             this.arguments = arguments;
         }
 
-        public void Execute(BankingApplication bank)
+        protected override string DoExecute(BankingApplication bank)
         {
-            bank.Deposit(Money.From(arguments));
+            var amount = Money.From(arguments);
+            bank.Deposit(amount);
+            return "Deposited " + amount;
         }
     }
     
-    public class WithdrawContext : IBankingContext
+    public class WithdrawContext : BankingContext
     {
         private readonly IEnumerable<string> arguments;
 
@@ -53,13 +68,15 @@ namespace CTM.Bank.Domain.Control
             this.arguments = arguments;
         }
 
-        public void Execute(BankingApplication bank)
+        protected override string DoExecute(BankingApplication bank)
         {
-            bank.Withdraw(Money.From(arguments));
+            var amount = Money.From(arguments);
+            bank.Withdraw(amount);
+            return "Withdrawn " + amount;
         }
     }
 
-    public class CreateAccountContext : IBankingContext
+    public class CreateAccountContext : BankingContext
     {
         private readonly IEnumerable<string> arguments;
 
@@ -68,13 +85,14 @@ namespace CTM.Bank.Domain.Control
             this.arguments = arguments;
         }
 
-        public void Execute(BankingApplication bank)
+        protected override string DoExecute(BankingApplication bank)
         {
             bank.CreateAccount(arguments);
+            return "Created account.";
         }
     }
 
-    public class OpenAccountContext : IBankingContext
+    public class OpenAccountContext : BankingContext
     {
         private readonly IEnumerable<string> arguments;
 
@@ -83,9 +101,10 @@ namespace CTM.Bank.Domain.Control
             this.arguments = arguments;
         }
 
-        public void Execute(BankingApplication bank)
+        protected override string DoExecute(BankingApplication bank)
         {
             bank.Open(arguments);
+            return "Opened account.";
         }
     }
 }

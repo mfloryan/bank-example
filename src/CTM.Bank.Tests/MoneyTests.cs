@@ -9,7 +9,7 @@ namespace CTM.Bank.Tests
         [Test]
         public void ShouldDetermineEquality()
         {
-            object money = new Money();
+            object money = new Money(0.00m);
             Assert.That(money, Is.EqualTo(money));
         }
     }
