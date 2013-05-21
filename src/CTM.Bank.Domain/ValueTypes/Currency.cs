@@ -65,5 +65,12 @@ namespace CTM.Bank.Domain.ValueTypes
             var amount = decimal.Parse(str, NumberStyles.Currency, currency.cultureInfo);
             return new Money(amount, currency);
         }
+
+        public class Exception : System.Exception
+        {
+            public Exception(string message) : base(message)
+            {
+            }
+        }
     }
 }

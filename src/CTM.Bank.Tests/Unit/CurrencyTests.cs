@@ -3,7 +3,7 @@ using System.Threading;
 using CTM.Bank.Domain.ValueTypes;
 using NUnit.Framework;
 
-namespace CTM.Bank.Tests
+namespace CTM.Bank.Tests.Unit
 {
     [TestFixture]
     public class CurrencyTests

@@ -45,6 +45,7 @@
     <Compile Include="Control\IBankingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueTypes\Currency.cs" />
+    <Compile Include="ValueTypes\Ensure.cs" />
     <Compile Include="ValueTypes\Money.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

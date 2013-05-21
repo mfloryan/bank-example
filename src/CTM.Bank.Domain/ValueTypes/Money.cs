@@ -5,10 +5,30 @@
         private readonly decimal amount;
         private readonly Currency currency;
 
+        public Money(int amount, Currency currency) : this(new decimal(amount), currency) {}
+        public Money(double amount, Currency currency) : this(new decimal(amount), currency) {}
         public Money(decimal amount, Currency currency)
         {
             this.amount = amount;
             this.currency = currency;
+        }
+
+        public static Money operator +(Money left, Money right)
+        {
+            EnsureTheSameCurrency(left, right);
+            return new Money(left.amount + right.amount, left.currency);
+        }
+        
+        public static Money operator -(Money left, Money right)
+        {
+            EnsureTheSameCurrency(left, right);
+            return new Money(left.amount - right.amount, left.currency);
+        }
+
+        private static void EnsureTheSameCurrency(Money left, Money right)
+        {
+            Ensure.Equals(left.currency, right.currency,
+                          () => { throw new Currency.Exception( "Currencies do not match, arithmetic operations on money must use the same currency");});
         }
 
         protected bool Equals(Money other)
