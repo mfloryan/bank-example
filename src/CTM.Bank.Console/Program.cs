@@ -7,7 +7,7 @@ namespace CTM.Bank.Console
     {
         static void Main()
         {
-            var bank = new BankingApplication();
+            var bank = ApplicationHost.Configure();
 
             System.Console.WriteLine("Welcome to the CTM.Bank, please use the following commands:");
             do
