@@ -3,6 +3,9 @@
 For all stories strict validation of the command line input is not necessary, it's not the most interesting part of the story!  
 Feel free to do it in your own time though!
 
+These stories and the Account aggregate are meant to focus on good Domain-Driven Design, you should focus on naming events, and the types of events 
+that the business might be interested in.
+
 ### Story 1 - Deposit Money
 
 As a customer, I want to be able to deposit money into my bank account, so that I can save money for the latest gadgets
