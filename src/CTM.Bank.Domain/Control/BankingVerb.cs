@@ -42,7 +42,7 @@ namespace CTM.Bank.Domain.Control
         {
             var bankingVerb = Verbs.SingleOrDefault(v => v.Matches(verb)) ?? Unknown;
             var arguments = Regex.Split(verb.Replace(bankingVerb.verb, string.Empty), "\\s");
-            return bankingVerb.Context(arguments);
+            return bankingVerb.Context(arguments.Where(a => !String.IsNullOrEmpty(a)));
         }
 
         private IBankingContext Context(IEnumerable<string> arguments)

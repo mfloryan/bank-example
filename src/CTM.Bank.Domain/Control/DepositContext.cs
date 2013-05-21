@@ -25,7 +25,14 @@ namespace CTM.Bank.Domain.Control
 
         public string Execute(BankingApplication bank)
         {
-            return DoExecute(bank);
+            try
+            {
+                return DoExecute(bank);
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
         }
 
         protected virtual string DoExecute(BankingApplication bank)
