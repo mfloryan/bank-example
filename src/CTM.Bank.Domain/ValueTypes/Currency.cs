@@ -14,13 +14,13 @@ namespace CTM.Bank.Domain.ValueTypes
         
         private readonly string code;
         private readonly string symbol;
-        private readonly CultureInfo cultureInfo;
+        internal readonly CultureInfo Format;
 
         private Currency(string code, string symbol, string cultureCode)
         {
             this.code = code;
             this.symbol = symbol;
-            cultureInfo = CultureInfo.GetCultureInfo(cultureCode);
+            Format = CultureInfo.GetCultureInfo(cultureCode);
             Currencies.Add(this);
         }
 
@@ -57,13 +57,6 @@ namespace CTM.Bank.Domain.ValueTypes
         protected static Currency DefaultCurrencyForCurrentLocale
         {
             get { return From(Thread.CurrentThread.CurrentCulture.NumberFormat.CurrencySymbol); }
-        }
-
-        internal static Money Parse(string str)
-        {
-            var currency = From(str);
-            var amount = decimal.Parse(str, NumberStyles.Currency, currency.cultureInfo);
-            return new Money(amount, currency);
         }
 
         public class Exception : System.Exception

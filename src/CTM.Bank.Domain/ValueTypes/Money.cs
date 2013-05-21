@@ -1,4 +1,6 @@
-﻿namespace CTM.Bank.Domain.ValueTypes
+﻿using System.Globalization;
+
+namespace CTM.Bank.Domain.ValueTypes
 {
     public class Money
     {
@@ -51,7 +53,9 @@
 
         public static Money From(string str)
         {
-            return Currency.Parse(str);
+            var currency = Currency.From(str);
+            var amount = decimal.Parse(str, NumberStyles.Currency, currency.Format);
+            return new Money(amount, currency);
         }
 
         public override string ToString()
