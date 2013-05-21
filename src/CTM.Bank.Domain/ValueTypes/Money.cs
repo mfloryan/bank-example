@@ -3,20 +3,40 @@
     public class Money
     {
         private readonly decimal amount;
+        private readonly Currency currency;
 
-        public Money(decimal amount)
+        public Money(decimal amount, Currency currency)
         {
             this.amount = amount;
+            this.currency = currency;
         }
 
-        public static Money From(object obj)
+        protected bool Equals(Money other)
         {
-            return new Money(0m);
+            return !ReferenceEquals(null, other) && (amount == other.amount && Equals(currency, other.currency));
+        }
+
+        public override bool Equals(object obj)
+        {
+            return ReferenceEquals(this, obj) || Equals(obj as Money);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (amount.GetHashCode()*397) ^ (currency != null ? currency.GetHashCode() : 0);
+            }
+        }
+
+        public static Money From(string str)
+        {
+            return Currency.Parse(str);
         }
 
         public override string ToString()
         {
-            return amount.ToString("C");
+            return currency.ToString(amount);
         }
     }
 }

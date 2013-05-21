@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CTM.Bank.Domain.ValueTypes;
 
 namespace CTM.Bank.Domain.Control
@@ -53,7 +54,7 @@ namespace CTM.Bank.Domain.Control
 
         protected override string DoExecute(BankingApplication bank)
         {
-            var amount = Money.From(arguments);
+            var amount = Money.From(arguments.First());
             bank.Deposit(amount);
             return "Deposited " + amount;
         }
@@ -70,7 +71,7 @@ namespace CTM.Bank.Domain.Control
 
         protected override string DoExecute(BankingApplication bank)
         {
-            var amount = Money.From(arguments);
+            var amount = Money.From(arguments.First());
             bank.Withdraw(amount);
             return "Withdrawn " + amount;
         }
