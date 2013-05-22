@@ -1,6 +1,11 @@
 # Intro to the `Domain.Core` packages
 
-To get into a clean state ready for adding packages run: `git checkout adding-packages`
+To get into a clean state ready for adding packages run: `git checkout 1-pre-nuget-install` to skip to a particular state you can checkout the following tags, they're pretty self explanatory:
+
+1. `1-pre-nuget-install` (Before step 1)
+2. `2-post-nuget-install` (Before step 3)
+3. `3-domain-core-wired-up` (Before step 4)
+4. `4-aggregate-root-created` (The finished article)
 
 1. Go to: Tools > Library Package Manager > Package Manager Settings > Package Sources
 	* Make sure the CTM Nuget Repository at: `http://pbo-ctmbuild01:8012/nuget` is added to your list of available package sources, if not add it and call it something like: `CTM Nuget Repository`
