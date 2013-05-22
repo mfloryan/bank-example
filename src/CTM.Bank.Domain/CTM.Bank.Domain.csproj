@@ -75,24 +75,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\Account.cs" />
+    <Compile Include="Aggregates\BankAccount.cs" />
     <Compile Include="ApplicationHost.cs" />
     <Compile Include="BankingApplication.cs" />
+    <Compile Include="Commands\CreateAccount.cs" />
     <Compile Include="Control\BankingVerb.cs" />
     <Compile Include="Control\DepositContext.cs" />
     <Compile Include="Control\IBankingContext.cs" />
     <Compile Include="Events\AccountCreated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CreateAccountHandler.cs" />
+    <Compile Include="ValueTypes\AccountNumber.cs" />
     <Compile Include="ValueTypes\Currency.cs" />
     <Compile Include="ValueTypes\Ensure.cs" />
     <Compile Include="ValueTypes\Money.cs" />
+    <Compile Include="ValueTypes\SortCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

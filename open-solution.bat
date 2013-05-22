@@ -1,3 +1,3 @@
 @echo off
-title WEB
-src\CTM.Home.Web.sln
+title ctm.bank
+src\CTM.Bank.sln

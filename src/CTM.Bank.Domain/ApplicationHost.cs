@@ -1,4 +1,6 @@
-﻿using CTM.Bank.Domain.Events;
+﻿using CTM.Bank.Domain.Aggregates;
+using CTM.Bank.Domain.Events;
+using CTM.Bank.Domain.Services;
 using CTM.Domain.Core;
 using CTM.Domain.Core.Mongo;
 
@@ -13,7 +15,15 @@ namespace CTM.Bank.Domain
             var repositoryFactory = Project.RegisterAllEventsInTheSameAssemblyAs<AccountCreated>()
                                            .UseThisCoolEventSourcingThang(Store.InMongo(connection.Database("bank_events")), Publish.ToNowhere());
 
-            return new BankingApplication();
+            var accountAggregateRepository = new AggregateRepository<BankAccount>(repositoryFactory.CreateRepository());
+            var createAccountHandler = new CreateAccountHandler(accountAggregateRepository);
+
+            return new BankingApplication(createAccountHandler);
         } 
+    }
+
+    public class AccountAggregateRepository
+    {
+        
     }
 }
