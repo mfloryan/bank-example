@@ -13,7 +13,7 @@ namespace CTM.Bank.Domain
             var connection = new MongoConnection("mongodb://localhost");
 
             var repositoryFactory = Project.RegisterAllEventsInTheSameAssemblyAs<AccountCreated>()
-                                           .UseThisCoolEventSourcingThang(Store.InMongo(connection.Database("bank_events")), Publish.ToNowhere());
+                                           .UseThisCoolEventSourcingThang(Store.InMongo(connection.Database("Bank_Events")), Publish.ToNowhere());
 
             var accountAggregateRepository = new AggregateRepository<BankAccount>(repositoryFactory.CreateRepository());
             var createAccountHandler = new CreateAccountHandler(accountAggregateRepository);

@@ -31,22 +31,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonDomain">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.328.20237\lib\net45\CommonDomain.dll</HintPath>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\CommonDomain.dll</HintPath>
     </Reference>
-    <Reference Include="CTM.Common.BuildingBlocks">
-      <HintPath>..\packages\CTM.Common.BuildingBlocks.0.1.18.30623\lib\net45\CTM.Common.BuildingBlocks.dll</HintPath>
+    <Reference Include="CTM.Common.BuildingBlocks, Version=0.1.20.17200, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CTM.Common.BuildingBlocks.0.1.20.17200\lib\net45\CTM.Common.BuildingBlocks.dll</HintPath>
     </Reference>
     <Reference Include="CTM.Common.Logging">
       <HintPath>..\packages\CTM.Common.Logging.0.1.17.13951\lib\net45\CTM.Common.Logging.dll</HintPath>
     </Reference>
     <Reference Include="CTM.Domain.Core">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.328.20237\lib\net45\CTM.Domain.Core.dll</HintPath>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\CTM.Domain.Core.dll</HintPath>
     </Reference>
     <Reference Include="CTM.Messaging.Core">
-      <HintPath>..\packages\CTM.Messaging.Core.0.1.14.19175\lib\net45\CTM.Messaging.Core.dll</HintPath>
+      <HintPath>..\packages\CTM.Messaging.Core.0.1.23.2\lib\net45\CTM.Messaging.Core.dll</HintPath>
     </Reference>
     <Reference Include="EventStore">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.328.20237\lib\net45\EventStore.dll</HintPath>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\EventStore.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\CTM.Common.Logging.0.1.17.13951\lib\net45\log4net.dll</HintPath>
@@ -58,7 +59,7 @@
       <HintPath>..\packages\mongocsharpdriver.1.8.1\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\packages\RabbitMQ.Client.3.0.4\lib\net30\RabbitMQ.Client.dll</HintPath>
