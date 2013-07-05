@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aggregates\BankAccount.cs" />
+    <Compile Include="Aggregates\BankAccountApply.cs" />
+    <Compile Include="Events\DepositMade.cs" />
     <Compile Include="ApplicationHost.cs" />
     <Compile Include="BankingApplication.cs" />
     <Compile Include="Commands\CreateAccount.cs" />
