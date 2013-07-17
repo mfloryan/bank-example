@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CommonDomain">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\CommonDomain.dll</HintPath>
+    <Reference Include="CommonDomain, Version=1.4.0.0, Culture=neutral, PublicKeyToken=ec37a15dc44010cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.353.1\lib\net45\CommonDomain.dll</HintPath>
     </Reference>
     <Reference Include="CTM.Common.BuildingBlocks, Version=0.1.20.17200, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -40,14 +41,17 @@
     <Reference Include="CTM.Common.Logging">
       <HintPath>..\packages\CTM.Common.Logging.0.1.17.13951\lib\net45\CTM.Common.Logging.dll</HintPath>
     </Reference>
-    <Reference Include="CTM.Domain.Core">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\CTM.Domain.Core.dll</HintPath>
+    <Reference Include="CTM.Domain.Core, Version=0.1.353.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.353.1\lib\net45\CTM.Domain.Core.dll</HintPath>
     </Reference>
-    <Reference Include="CTM.Messaging.Core">
-      <HintPath>..\packages\CTM.Messaging.Core.0.1.23.2\lib\net45\CTM.Messaging.Core.dll</HintPath>
+    <Reference Include="CTM.Messaging.Core, Version=0.1.25.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CTM.Messaging.Core.0.1.25.1\lib\net45\CTM.Messaging.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EventStore">
-      <HintPath>..\packages\CTM.Domain.Core.0.1.339.1\lib\net45\EventStore.dll</HintPath>
+    <Reference Include="EventStore, Version=3.2.0.0, Culture=neutral, PublicKeyToken=7735eb81c0bd9948, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CTM.Domain.Core.0.1.353.1\lib\net45\EventStore.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\CTM.Common.Logging.0.1.17.13951\lib\net45\log4net.dll</HintPath>
